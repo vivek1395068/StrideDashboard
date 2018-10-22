@@ -1,0 +1,19 @@
+<div *ngFor="let datai of data; index as i" id="parentDiv">
+    <div class="docInfo"><span>date_uploaded : {{datai.date_uploaded}}</span><span>name : {{datai.name}}</span>
+        <span>set_id : {{datai.set_id}} </span><span>status : {{datai.status}}</span> 
+    </div>
+    <div class="heading"><div (click)="sortFunction('set_id',i)">set_id</div><div (click)="sortFunction('doc_id',i)">doc_id</div>
+        <div (click)="sortFunction('name',i)">name</div><div (click)="sortFunction('status',i)">status</div>
+        <div (click)="sortFunction('uploader',i)">uploader</div>
+        <div (click)="sortFunction('preview_url',i)">preview_url</div><div (click)="sortFunction('date_uploaded',i)">date_uploaded</div>
+    </div>
+
+    <div class="parentRow" *ngFor="let document of datai.documents">
+        <div>{{document.set_id}}</div><div>{{document.doc_id}}</div>
+        <div>{{document.name}}</div>
+        <div>{{document.status}}</div><div>{{document.uploader}}</div>
+        <div>{{document.preview_url}}</div>
+        <div>{{document.date_uploaded}}</div>
+    </div>
+    
+</div>
